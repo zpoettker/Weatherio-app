@@ -340,6 +340,29 @@ body {
   box-shadow: none;
 }
 
+.search-view-list { padding-block: 8px 16px; }
+
+.search-view .view-item {
+  position: relative;
+  height: 56px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding-inline: 16px 24px;
+}
+
+.search-view .view-item :is(.m-icon, .item-subtitle) {
+  color: var(--on-surface-variant);
+}
+
+.search-view .view-item .item-link {
+  position: absolute;
+  inset: 0;
+  box-shadow: none;
+}
+
+
 /*-----------------------------------*\
   #CURRENT WEATHER
 \*-----------------------------------*/
