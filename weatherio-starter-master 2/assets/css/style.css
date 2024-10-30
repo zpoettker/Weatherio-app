@@ -606,7 +606,17 @@ article.container::before {
   #FORECAST
 \*-----------------------------------*/
 
+.slider-container {
+  overflow-x: auto;
+  margin-inline: -16px;
+}
 
+.slider-container::-webkit-scrollbar { display: none;}
+
+.slider-list {
+  display: flex;
+  gap: 12px;
+}
 
 
 
