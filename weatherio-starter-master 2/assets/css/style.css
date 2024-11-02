@@ -883,7 +883,7 @@ responsive for larger than 1200 px screen */
 
   .search-view:has(.search-result.active):focus-within .search-field {
     border-bottom-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .search-view .view-list {
@@ -943,6 +943,6 @@ responsive for larger than 1400 px screen */
 
 @media (min-width: 1400px) {
 
-.highlight-list { grid-template-column: repeat(4, 1fr); }
+.highlight-list { grid-template-columns: repeat(4, 1fr); }
 
 }
