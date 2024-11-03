@@ -83,6 +83,12 @@ searchField.addEventListener("input", function () {
                     searchResult.querySelector("[data-search-list]").appendChild(searchItem);
                     items.push(searchItem.querySelector("[data-search-toggler]"));
                 }
+
+
+                addEventOnElements(items, "click", function () {
+                    toggleSearch();
+                    searchResult.classList.remove("active");
+                })
             });
         }, searchTimeoutDuration);
     }
@@ -101,7 +107,7 @@ const errorContent = document.querySelector("[data-error-content]");
  */
 export const updateWeather = function (lat, lon) {
 
-    loading.style.display = "grid";
+    // loading.style.display = "grid";
     container.style.overflowY = "hidden";
     container.classList.contains("fade-in") ?? container.classList.remove("fade-in");
     errorContent.style.display = "none";
@@ -129,7 +135,7 @@ export const updateWeather = function (lat, lon) {
 
         const {
             weather,
-            dt: dataUnix,
+            dt: dateUnix,
             sys: { sunrise: sunriseUnixUTC, sunset: sunsetUnixUTC},
             main: { temp, feels_like, pressure, humidity } ,
             visbility,
@@ -161,7 +167,7 @@ export const updateWeather = function (lat, lon) {
                 </li>
                 <li class="meta-item">
                     <span class="m-icon">location_on</span>
-                    <p class="title-3 meta-text"> data-location</p>
+                    <p class="title-3 meta-text" data-location></p>
                 </li>
             </ul>
         `;
@@ -176,3 +182,5 @@ export const updateWeather = function (lat, lon) {
     });
 
 }
+
+export const error404 = function () { }

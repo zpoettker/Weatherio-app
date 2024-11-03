@@ -34,17 +34,17 @@ export const monthNames = [
 
 /**
  * 
- * @param {number} dataUnix Unix date in seconds
+ * @param {number} dateUnix Unix date in seconds
  * @param {number} timezone Timezone shift from UTC in seconds
  * @returns {string} Data String. format: "Sunday 10, Jan"
  */
 
-export const getDate = function(dataUnix, timezone) {
-    const date = new Date((dataUnix + timezone) * 1000);
+export const getDate = function(dateUnix, timezone) {
+    const date = new Date((dateUnix + timezone) * 1000);
     const weekDayName = weekDayNames[date.getUTCDay()];
     const monthName = monthNames[date.getUTCMonth()];
 
-    return `${weekDayName} ${date.getUTCDay()}, ${monthName}`;
+    return `${weekDayName} ${date.getUTCDate()}, ${monthName}`;
 }
 
 /**
