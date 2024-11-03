@@ -123,7 +123,7 @@ export const updateWeather = function (lat, lon) {
     forecastSection.innerHTML = "";
 
     if (window.location.hash === "#/current-location") {
-        currentLocationBtn.setAttribute("disable", "");
+        currentLocationBtn.setAttribute("disabled", "");
     } else {
         currentLocationBtn.removeAttribute("disabled");
     }
@@ -333,8 +333,6 @@ export const updateWeather = function (lat, lon) {
             } = forecast;
 
 
-
-
            hourlySection.innerHTML = `
             <h2 class="title-2">Today at</h2>
 
@@ -373,7 +371,7 @@ export const updateWeather = function (lat, lon) {
 
                 </div>
                 `;
-                hourlySection.querySelector("data-temp]").appendChild(tempLi);
+                hourlySection.querySelector("[data-temp]").appendChild(tempLi);
 
                 const windLi = document.createElement("li");
                 windLi.classList.add("slider-item");
@@ -395,6 +393,36 @@ export const updateWeather = function (lat, lon) {
                 hourlySection.querySelector("[data-wind]").appendChild(windLi);
 
             }
+
+            /**
+             *  5D FORECAST SECTION
+             */
+            forecastSection.innnerHTML = `
+            <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+
+        <div class="card card-lg forecast-card">
+        <ul>
+            <li class="card-item">
+
+            <div class="icon-wrapper">
+                <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
+                alt="Overcast Clouds" class="weather-icon">
+
+                <span class="span">
+                    <p class="title-2">25</p>
+                </span>
+            </div>
+
+            <p class="label-1">17 Feb</p>
+
+            <p class="label-1">Friday</p>
+
+                </li>
+        </ul>
+        </div>
+            `;
+
+            for (let i = 7, len = forecastList.length; i < len; i+=8) {}
 
         });
 
