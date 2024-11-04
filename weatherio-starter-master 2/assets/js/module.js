@@ -80,12 +80,12 @@ export const getHours = function(timeUnix, timezone) {
 
 /**
  * 
- * @param {number} mps Metter per seconds
- * @returns {number} Kilometer per hours
+ * @param {number} mps Meter per seconds
+ * @returns {number} miles per hour
  */
-export const mps_to_kmh = mps => {
-    const mph = mps * 3600;
-    return mph / 1000;
+export const mps_to_mph = mps => {
+    const mph = mps * 2.237;
+    return mph;
 }
 
 export const aqiText = {
@@ -107,7 +107,7 @@ export const aqiText = {
     },
     5: {
         level: "Very Poor",
-        message: "Health warnings of emergency conditions. The entire population is more liekly to be affected."
+        message: "Health warnings of emergency conditions. The entire population is more likely to be affected."
     }
 }
 

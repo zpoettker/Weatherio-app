@@ -107,9 +107,9 @@ const errorContent = document.querySelector("[data-error-content]");
  */
 export const updateWeather = function (lat, lon) {
 
-    // loading.style.display = "grid";
-    // container.style.overflowY = "hidden";
-    // container.classList.remove("fade-in");
+    loading.style.display = "grid";
+    container.style.overflowY = "hidden";
+    container.classList.remove("fade-in");
     errorContent.style.display = "none";
 
     const currentWeatherSection = document.querySelector("[data-current-weather]");
@@ -150,7 +150,7 @@ export const updateWeather = function (lat, lon) {
         <h2 class="title-2 card-title">Now</h2>
 
             <div class="weapper">
-                <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
+                <p class="heading">${parseInt(temp * 9 / 5 + 32)}&deg;<sup>F</sup></p>
 
                 <img src="./assets/images/weather_icons/${icon}.png" width="64" 
                 height="64" alt="${description}" 
@@ -297,7 +297,7 @@ export const updateWeather = function (lat, lon) {
                         <div class="wrapper">
                             <span class="m-icon">visibility</span>
 
-                            <p class="title-1">${visibility / 1000}<sub>km</sub></p>
+                            <p class="title-1">${visibility / 1000 * 0.621}<sub>mi</sub></p>
                         </div>
 
                     </div>
@@ -309,7 +309,7 @@ export const updateWeather = function (lat, lon) {
                         <div class="wrapper">
                             <span class="m-icon">thermostat</span>
 
-                            <p class="title-1">${parseInt(feels_like)}&deg;<sup>c</sup></p>
+                            <p class="title-1">${parseInt(feels_like * 9 / 5 + 32)}&deg;<sup>F</sup></p>
                         </div>
 
                     </div>
@@ -367,7 +367,7 @@ export const updateWeather = function (lat, lon) {
                     width="48" height="48" loading="lazy" 
                     alt="${description}" class="weather-icon" title="${description}">
 
-                    <p class="body-3">${parseInt(temp)}&deg;</p>
+                    <p class="body-3">${parseInt(temp * 9 / 5 + 32)}&deg;</p>
 
                 </div>
                 `;
@@ -386,7 +386,7 @@ export const updateWeather = function (lat, lon) {
                         alt="direction" class="weather-icon" 
                         style="transform: rotate(${windDirection - 180}deg)">
 
-                        <p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))} km/h</p>
+                        <p class="body-3">${parseInt(module.mps_to_mph(windSpeed))} mph</p>
 
                     </div>
                 `;
@@ -397,37 +397,52 @@ export const updateWeather = function (lat, lon) {
             /**
              *  5D FORECAST SECTION
              */
-            forecastSection.innnerHTML = `
+            forecastSection.innerHTML = `
             <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
 
         <div class="card card-lg forecast-card">
-        <ul>
-            <li class="card-item">
-
-            <div class="icon-wrapper">
-                <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
-                alt="Overcast Clouds" class="weather-icon">
-
-                <span class="span">
-                    <p class="title-2">25</p>
-                </span>
-            </div>
-
-            <p class="label-1">17 Feb</p>
-
-            <p class="label-1">Friday</p>
-
-                </li>
-        </ul>
+        <ul data-forecast-list></ul>
         </div>
             `;
 
-            for (let i = 7, len = forecastList.length; i < len; i+=8) {}
+            for (let i = 7, len = forecastList.length; i < len; i+=8) {
 
+                const {
+                    main: { temp_max },
+                    weather,
+                    dt_txt
+                } = forecastList[i];
+                const [{icon, description}] = weather
+                const date = new Date(dt_txt);
+
+                const li = document.createElement("li");
+                li.classList.add("card-item");
+
+                li.innerHTML = `
+                <div class="icon-wrapper">
+                <img src="./assets/images/weather_icons/${icon}.png" width="36" height="36" 
+                alt="${description}" class="weather-icon" title="${description}">
+
+                <span class="span">
+                    <p class="title-2">${parseInt(temp_max  * 9 / 5 + 32)}&deg</p>
+                </span>
+            </div>
+
+            <p class="label-1">${date.getDate()} ${module.monthNames[date.getUTCMonth()]}</p>
+
+            <p class="label-1">${module.weekDayNames[date.getUTCDay()]}</p>
+                `;
+                forecastSection.querySelector("[data-forecast-list]").appendChild(li);
+
+            }
+
+            loading.style.display = "none";
+            container.style.overflowY = "overlay";
+            container.classList.add("fade-in");
         });
 
     });
 
 }
 
-export const error404 = function () { }
+export const error404 = () =>  error.Content.style.display = "flex";

@@ -9,11 +9,11 @@
 
 import { updateWeather, error404 } from "./app.js";
 
-const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474" //London
+const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474"; //London
 
 const currentLocation = function() {
 window.navigator.geolocation.getCurrentPosition( res => {
-    const {lattitude, longitude } = res.coords;
+    const {latitude, longitude } = res.coords;
 
     updateWeather(`lat=${latitude}`, `lon=${longitude}`);
 }, err => {
