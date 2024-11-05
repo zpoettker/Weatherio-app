@@ -7,19 +7,16 @@ A brief description of what this project does and who it's for
 
 **Client:** HTML, CSS, JavaScript, API
 
-## Demo
-
-Insert gif or link to demo
-
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- 'Current Weather' section - outlining curent weather conditions, Date, location, and ofcourse temperature.
+- 'Today's Highlights' - provides information on air quality, sunrise and sunset, humidity, pressure, visibility, and what it currently feels like out.
+- '5 Day forecast' given the mid-day temp, aswell as the weather conditions.
+- 'Today at' section. - Provides weather and wind information for the following 24 hours in 3 hour increments.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img width="1449" alt="Screenshot 2024-11-04 at 9 40 43 PM" src="https://github.com/user-attachments/assets/0c7f5946-9f87-4251-92c6-8d4d2c33d631">
 
 ## Run Locally
 
@@ -48,14 +45,13 @@ Open with live server
 ```
 
 
-## Authors
+## Credit
 
 - [@codewithsadee](https://www.github.com/codewithsadee)
+
+- openweathermap.org
+
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## Support
-
-For support, Join my [Patreon Comunity](https://www.patreon.com/codewithsadee/membership) or Subscribe My [YouTube Channel](https://youtube.com/@codewithsadee).
