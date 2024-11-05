@@ -1,7 +1,8 @@
 
-# Project Title
+# Weatherio App
 
-A brief description of what this project does and who it's for
+This is a portfolio project and an application I plan to use in my day-to-day life. 
+Created this weather app to test, to sharpen, and to demonstrate my programming skills, aswell as for fun and to create something useful and practical.
 
 ## Tech Stack
 
