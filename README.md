@@ -11,8 +11,8 @@ A brief description of what this project does and who it's for
 
 - 'Current Weather' section - outlining curent weather conditions, Date, location, and ofcourse temperature.
 - 'Today's Highlights' - provides information on air quality, sunrise and sunset, humidity, pressure, visibility, and what it currently feels like out.
-- '5 Day forecast' given the mid-day temp, aswell as the weather conditions.
-- 'Today at' section. - Provides weather and wind information for the following 24 hours in 3 hour increments.
+- '5 Day Forecast' given the mid-day temp, aswell as the weather conditions.
+- '24 Hour Forecast' section. - Provides weather and wind information for the following 24 hours in 3 hour increments.
 
 ## Screenshots
 
