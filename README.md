@@ -1,6 +1,8 @@
 
 # Weatherio App
 
+Weatherio is a web application that uses a weather database api to relay information on any location in the world. This weather data is accurate, quick, and most importantly useful in planning ahead in regards to the forecast.
+
 This is a portfolio project and an application I plan to use in my day-to-day life. 
 Created this weather app to test, to sharpen, and to demonstrate my programming skills, aswell as for fun and to create something useful and practical.
 
